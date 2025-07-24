@@ -15,7 +15,7 @@ class HotelController @Autowired()(private val hotelRepository: HotelRepository,
   @RequestMapping(Array("/ls"))
   @ResponseBody
   def ls() = {
-    println(testBean.sayHello())
+    testBean.sayHello()
     hotelRepository.findAll().toList.asJava
   }
 
