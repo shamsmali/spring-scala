@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Server Time</title>
+</head>
+<body>
+<p>Server time (ns): <span id="serverTime" th:text="${serverTime}"></span></p>
+<p>Client time (ns): <span id="clientTime"></span></p>
+<p>Difference (ns): <span id="diff"></span></p>
+<script type="text/javascript">
+    var serverTime = Number(document.getElementById('serverTime').textContent);
+    var clientTime = Date.now() * 1000000;
+    document.getElementById('clientTime').textContent = clientTime;
+    document.getElementById('diff').textContent = clientTime - serverTime;
+</script>
+</body>
+</html>
